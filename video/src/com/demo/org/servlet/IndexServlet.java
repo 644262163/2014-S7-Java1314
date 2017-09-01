@@ -39,11 +39,11 @@ public class IndexServlet extends HttpServlet {
 		//db
 		Connection con = null;
 		try {
-			//¼ÓÔØÇý¶¯
+			//
 			Class.forName("com.mysql.jdbc.Driver");
-			//Êý¾Ý¿âurl
-			String urlstr = "jdbc:mysql://10.10.3.254/studentinfo?"
-					+ "user=s_2014&password=s_2014";
+			//url
+			String urlstr = "jdbc:mysql://localhost/java1314s7?"
+					+ "user=j1314s7&password=j1314s7";
 			con = DriverManager.getConnection(urlstr);
 			//
 			Statement stmt = con.createStatement();
@@ -65,7 +65,7 @@ public class IndexServlet extends HttpServlet {
 				try {
 					con.close();
 				} catch (SQLException e) {
-					// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+					// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Éµï¿½ catch ï¿½ï¿½
 					e.printStackTrace();
 				}
 			}
