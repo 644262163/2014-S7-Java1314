@@ -43,11 +43,11 @@ public class IndexServlet extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			//url
 			String urlstr = "jdbc:mysql://localhost/java1314s7?"
-					+ "user=j1314s7&password=j1314s7";
+					+ "user=root&password=niit";
 			con = DriverManager.getConnection(urlstr);
 			//
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("select count(1) cnt from studentinfo");
+			ResultSet rs = stmt.executeQuery("select count(1) cnt from account");
 			
 			if(rs.next()) {
 				int cnt = rs.getInt("cnt");
