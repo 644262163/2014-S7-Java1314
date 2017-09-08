@@ -17,13 +17,13 @@ import com.demo.org.dao.impl.LogDaoImpl;
 /**
  * Servlet Filter implementation class LogFilter
  */
-@WebFilter(filterName="F0_LogFilter",urlPatterns="/*")
-public class LogFilter implements Filter {
+@WebFilter(filterName="FB",urlPatterns="/*")
+public class F0_LogFilter implements Filter {
 
     /**
      * Default constructor. 
      */
-    public LogFilter() {
+    public F0_LogFilter() {
         // TODO Auto-generated constructor stub
     }
 
