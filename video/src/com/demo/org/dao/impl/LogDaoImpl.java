@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.demo.org.bean.Log;
 import com.demo.org.dao.LogDao;
+import com.demo.org.util.DbManager;
 
 public class LogDaoImpl implements LogDao{
 
@@ -17,12 +18,7 @@ public class LogDaoImpl implements LogDao{
 		// TODO Auto-generated method stub
 		Connection con = null;
 		try {
-			//
-			Class.forName("com.mysql.jdbc.Driver");
-			//
-			String urlstr = "jdbc:mysql://localhost/java1314s7?"
-					+ "user=root&password=niit";
-			con = DriverManager.getConnection(urlstr);
+			con = DbManager.getConnection();
 			//
 			Statement stmt = con.createStatement();
 			
@@ -33,20 +29,10 @@ public class LogDaoImpl implements LogDao{
 			
 			return result;
 			
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
+		}catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			if(con != null) {
-				try {
-					con.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			DbManager.closeConnection(con);
 		}
 		
 		
